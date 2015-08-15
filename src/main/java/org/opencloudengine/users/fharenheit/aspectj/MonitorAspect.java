@@ -14,9 +14,9 @@ public class MonitorAspect {
     final ActorSystemMessages messages;
 
     public MonitorAspect() throws MalformedObjectNameException, NotCompliantMBeanException, InstanceAlreadyExistsException, MBeanRegistrationException {
+        System.out.println("---------------------------------------");
         this.messages = new ActorSystemMessages();
         JMXEndpoint.start(messages);
-        System.out.println("---------------------------------------");
     }
 
 /*
