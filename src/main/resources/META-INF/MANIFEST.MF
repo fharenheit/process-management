@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Name: Flamingo Spark Agent
+Specification-Title: Flamingo Spark Agent
+Specification-Version: 1.8.6
+Specification-Vendor: io.cloudine
+Implementation-Title: org.opencloudengine
+Implementation-Version: 1.8.6
+Implementation-Vendor: cloudine.io
+Premain-Class: org.opencloudengine.users.fharenheit.aspectj.FlamingoAgent
+Can-Redefine-Classes: true

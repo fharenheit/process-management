@@ -8,6 +8,11 @@
 # mvn package
 ```
 
+### AspectJ로 실행하기
+
+```
+# java -javaagent:lib/aspectjweaver-1.8.6.jar <MAIN_CLASS>
+```
 ### 참고 라이브러리
 
 * AspectJ + Akka Monitoring : https://github.com/eigengo/activator-akka-aspectj
