@@ -1,6 +1,5 @@
 package org.opencloudengine.users.fharenheit.aspectj;
 
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -17,13 +16,17 @@ public class MonitorAspect {
     public MonitorAspect() throws MalformedObjectNameException, NotCompliantMBeanException, InstanceAlreadyExistsException, MBeanRegistrationException {
         this.messages = new ActorSystemMessages();
         JMXEndpoint.start(messages);
+        System.out.println("---------------------------------------");
     }
 
-    @Pointcut(value = "execution (* akka.actor.ActorCell.receiveMessage(..)) && args(msg)", argNames = "msg")
-    public void receiveMessagePointcut(Object msg) {}
+/*
+    @Pointcut(value = "execution (* org.apache.spark.SparkContext.new(..)) && args(config)", argNames = "config")
+    public void constructorPointcut(Object config) {}
 
-    @Before(value = "receiveMessagePointcut(msg)", argNames = "jp,msg")
-    public void message(JoinPoint jp, Object msg) {
-        messages.recordMessage();
+    @Before(value = "constructorPointcut(config)", argNames = "config")
+    public void message(Object config) {
+        System.out.println("---------------------------------------");
+        System.out.println(config.getClass().getName());
     }
+*/
 }

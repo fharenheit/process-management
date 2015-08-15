@@ -127,13 +127,56 @@
 					</execution>
 				</executions>
 				<configuration>
-					<includeProjectDependencies>false</includeProjectDependencies>
-					<includePluginDependencies>true</includePluginDependencies>
 					<arguments>
 						<argument>-javaagent:lib/aspectjweaver-1.8.6.jar</argument>
 					</arguments>
 					<mainClass>org.opencloudengine.users.fharenheit.scala.SparkPi</mainClass>
+					<additionalClasspathElements>
+						<additionalClasspathElement>target/classes</additionalClasspathElement>
+					</additionalClasspathElements>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.scala-lang</groupId>
+						<artifactId>scala-compiler</artifactId>
+						<version>${scala.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.scala-lang</groupId>
+						<artifactId>scala-reflect</artifactId>
+						<version>${scala.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.scala-lang</groupId>
+						<artifactId>scala-library</artifactId>
+						<version>${scala.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.scala-lang</groupId>
+						<artifactId>scala-actors</artifactId>
+						<version>${scala.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.scala-lang</groupId>
+						<artifactId>scalap</artifactId>
+						<version>${scala.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.spark</groupId>
+						<artifactId>spark-core_2.10</artifactId>
+						<version>1.4.1</version>
+						<exclusions>
+							<exclusion>
+								<groupId>org.slf4j</groupId>
+								<artifactId>jul-to-slf4j</artifactId>
+							</exclusion>
+							<exclusion>
+								<groupId>org.slf4j</groupId>
+								<artifactId>slf4j-jdk14</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
@@ -184,6 +227,12 @@
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-core_2.10</artifactId>
 			<version>1.4.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>jul-to-slf4j</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -226,11 +275,18 @@
 			<artifactId>guava</artifactId>
 			<version>18.0</version>
 		</dependency>
+<!--
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.19</version>
+		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>log4j-over-slf4j</artifactId>
-			<version>1.7.9</version>
+			<version>1.7.10</version>
 		</dependency>
+-->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
