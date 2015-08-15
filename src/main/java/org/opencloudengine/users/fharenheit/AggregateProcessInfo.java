@@ -5,13 +5,6 @@ import org.hyperic.sigar.*;
 
 import java.util.*;
 
-/**
- * Tracks the historical usage for child processes as they come and go to give an estimation of the total resources used
- * by a process and all its children, past and present.
- *
- * @author Greg Hinkle
- * @author John Mazzitelli
- */
 public class AggregateProcessInfo extends ProcessInfo {
 
 	private Map<Long, ProcessStats> childProcessStats = new HashMap<Long, ProcessStats>();
