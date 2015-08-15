@@ -8,3 +8,8 @@
 # mvn package
 ```
 
+### 참고 라이브러리
+
+* AspectJ + Akka Monitoring : https://github.com/eigengo/activator-akka-aspectj
+* https://github.com/nativelibs4java
+* https://github.com/nativelibs4java/JNAerator

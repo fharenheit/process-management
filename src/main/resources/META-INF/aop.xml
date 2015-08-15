@@ -1,0 +1,14 @@
+<aspectj>
+
+    <aspects>
+        <aspect name="org.opencloudengine.users.fharenheit.aspectj.MonitorAspect"/>
+
+        <exclude within="org.springframework.transaction.aspectj.AnnotationTransactionAspect"/>
+    </aspects>
+
+    <weaver options="-XnoInline -verbose -showWeaveInfo">
+        <include within="org.opencloudengine.*"/>
+        <include within="akka.actor.*"/>
+    </weaver>
+
+</aspectj>
