@@ -12,13 +12,23 @@ public class KafkaAspect {
 
     @Pointcut(value = "execution (* kafka.server.KafkaServer.*(..)) && args(config, time)", argNames = "joinPoint,config,time")
     public void kafkaServerConstruct(JoinPoint joinPoint, KafkaConfig config, SystemTime time) {
-
     }
 
     @After(value = "kafkaServerConstruct(joinPoint, config, time)", argNames = "joinPoint,config,time")
     public void message(JoinPoint joinPoint, KafkaConfig config, SystemTime time) {
         System.out.println("---------------------------------------");
         System.out.println(config.getClass().getName());
+    }
+
+    @Pointcut(value = "execution(* org.apache.zookeeper.server.ZooKeeperServer.*())")
+    public void zkServerStartup(JoinPoint joinPoint) {
+    }
+
+    @After(value = "zkServerStartup(joinPoint)")
+    public void message(JoinPoint joinPoint) {
+        System.out.println("======================================");
+        System.out.println(joinPoint.getArgs());
+        System.out.println("======================================");
     }
 
 /*

@@ -1,0 +1,17 @@
+RULE Start Kafka Agent
+CLASS kafka.server.KafkaServer
+METHOD startup
+AT EXIT
+BIND buffer = $this;
+IF true
+DO org.opencloudengine.users.fharenheit.bm.KafkaAgent.start(buffer)
+ENDRULE
+
+RULE Start ZooKeeper Agent
+CLASS org.apache.zookeeper.server.ZooKeeperServer
+METHOD startup
+AT EXIT
+BIND buffer = $this;
+IF true
+DO org.opencloudengine.users.fharenheit.bm.ZooKeeperAgent.start(buffer)
+ENDRULE

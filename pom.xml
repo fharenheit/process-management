@@ -16,6 +16,7 @@
         <scala.version>2.10.4</scala.version>
         <java.version>1.7</java.version>
         <aspectj.version>1.8.6</aspectj.version>
+        <byteman.version>3.0.1</byteman.version>
     </properties>
 
     <build>
@@ -105,6 +106,11 @@
                                     <groupId>org.aspectj</groupId>
                                     <artifactId>aspectjweaver</artifactId>
                                     <version>${aspectj.version}</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.jboss.byteman</groupId>
+                                    <artifactId>byteman</artifactId>
+                                    <version>${byteman.version}</version>
                                 </artifactItem>
                             </artifactItems>
                             <excludes>META-INF/MANIFEST.MF</excludes>

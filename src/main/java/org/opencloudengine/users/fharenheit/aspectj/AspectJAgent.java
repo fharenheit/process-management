@@ -22,7 +22,7 @@ public class AspectJAgent {
         AspectJAgent.instrumentation = instrumentation;
         AspectJAgent.instrumentation.addTransformer(transformer);
 
-        System.err.println("INFO: (Enh120375):  premain");
+        System.err.println("INFO: org.opencloudengine.users.fharenheit.aspectj.AspectJAgent initialized....");
     }
 
     public static Instrumentation getInstrumentation() {
