@@ -1,7 +1,10 @@
 <aspectj>
 
     <aspects>
-        <aspect name="org.opencloudengine.users.fharenheit.aspectj.MonitorAspect"/>
+        <aspect name="org.opencloudengine.users.fharenheit.aspectj.AspectJAgent"/>
+        <!--
+                <aspect name="org.opencloudengine.users.fharenheit.aspectj.MonitorAspect"/>
+        -->
 
         <exclude within="org.springframework.transaction.aspectj.AnnotationTransactionAspect"/>
     </aspects>

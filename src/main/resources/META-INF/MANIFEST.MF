@@ -6,5 +6,5 @@ Specification-Vendor: io.cloudine
 Implementation-Title: org.opencloudengine
 Implementation-Version: 1.8.6
 Implementation-Vendor: cloudine.io
-Premain-Class: org.opencloudengine.users.fharenheit.aspectj.FlamingoAgent
+Premain-Class: org.opencloudengine.users.fharenheit.aspectj.AspectJAgent
 Can-Redefine-Classes: true
