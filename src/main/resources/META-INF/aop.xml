@@ -1,17 +1,14 @@
 <aspectj>
 
     <aspects>
-        <aspect name="org.opencloudengine.users.fharenheit.aspectj.AspectJAgent"/>
-        <!--
-                <aspect name="org.opencloudengine.users.fharenheit.aspectj.MonitorAspect"/>
-        -->
-
+        <aspect name="org.opencloudengine.users.fharenheit.aspectj.KafkaAspect"/>
         <exclude within="org.springframework.transaction.aspectj.AnnotationTransactionAspect"/>
     </aspects>
 
     <weaver options="-XnoInline -verbose -showWeaveInfo">
         <include within="org.opencloudengine.*"/>
         <include within="org.apache.spark.*"/>
+        <include within="kafka.*"/>
     </weaver>
 
 </aspectj>

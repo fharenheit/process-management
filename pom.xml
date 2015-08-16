@@ -87,33 +87,31 @@
                 </configuration>
             </plugin>
 
-            <!--
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-dependency-plugin</artifactId>
-                            <version>2.4</version>
-                            <executions>
-                                <execution>
-                                    <id>unpack</id>
-                                    <phase>test</phase>
-                                    <goals>
-                                        <goal>unpack</goal>
-                                    </goals>
-                                    <configuration>
-                                        <outputDirectory>${project.build.outputDirectory}</outputDirectory>
-                                        <artifactItems>
-                                            <artifactItem>
-                                                <groupId>org.aspectj</groupId>
-                                                <artifactId>aspectjweaver</artifactId>
-                                                <version>${aspectj.version}</version>
-                                            </artifactItem>
-                                        </artifactItems>
-                                        <excludes>META-INF/MANIFEST.MF</excludes>
-                                    </configuration>
-                                </execution>
-                            </executions>
-                        </plugin>
-            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.aspectj</groupId>
+                                    <artifactId>aspectjweaver</artifactId>
+                                    <version>${aspectj.version}</version>
+                                </artifactItem>
+                            </artifactItems>
+                            <excludes>META-INF/MANIFEST.MF</excludes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -182,6 +180,13 @@
     </build>
 
     <dependencies>
+        <!-- Apache Kafka -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.10</artifactId>
+            <version>0.8.2.1</version>
+        </dependency>
+
         <!-- JUEL -->
         <dependency>
             <groupId>de.odysseus.juel</groupId>
